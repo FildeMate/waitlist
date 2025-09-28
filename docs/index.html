@@ -207,43 +207,7 @@
             <div class="feature">
                 <i class="fas fa-chart-line"></i>
                 <div class="feature-text">Analytics</div>
-            </div>            </div>
-            <div class="feature">
-                <i class="fas fa-robot"></i>
-                <div class="feature-text">AI Agents</div>
             </div>
-            <div class="feature">
-                <i class="fas fa-seedling"></i>
-                <div class="feature-text">Smart Farming</div>
-            </div>
-            <div class="feature">
-                <i class="fas fa-chart-line"></i>
-                <div class="feature-text">Analytics</div>
-            </div>            </div>
-            <div class="feature">
-                <i class="fas fa-robot"></i>
-                <div class="feature-text">AI Agents</div>
-            </div>
-            <div class="feature">
-                <i class="fas fa-seedling"></i>
-                <div class="feature-text">Smart Farming</div>
-            </div>
-            <div class="feature">
-                <i class="fas fa-chart-line"></i>
-                <div class="feature-text">Analytics</div>
-            </div>            </div>
-            <div class="feature">
-                <i class="fas fa-robot"></i>
-                <div class="feature-text">AI Agents</div>
-            </div>
-            <div class="feature">
-                <i class="fas fa-seedling"></i>
-                <div class="feature-text">Smart Farming</div>
-            </div>
-            <div class="feature">
-                <i class="fas fa-chart-line"></i>
-                <div class="feature-text">Analytics</div>
-            </div>            </div>
         </div>
 
         <p style="color: #4a5568; font-size: 1.1rem; margin-bottom: 30px; text-align: center; font-weight: 500;">Transform your farming with FildeMate - Join us in revolutionizing agriculture!</p>
@@ -308,7 +272,7 @@
 
         <div class="success-message" id="successMessage">
             <i class="fas fa-check-circle"></i>
-            <strong>Welcome to FildeMate!</strong> You've been added to our waitlist. We'll notify you when we launch.
+            <strong>Thank you very much!</strong> We received your email and will get back to you soon.
         </div>
 
         <div class="error-message" id="errorMessage">
@@ -332,34 +296,13 @@
             successMessage.style.display = 'none';
             errorMessage.style.display = 'none';
             
-            // Collect form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            try {
-                const response = await fetch('/api/waitlist', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data)
-                });
-                
-                const result = await response.json();
-                
-                if (response.ok) {
-                    successMessage.style.display = 'block';
-                    this.reset();
-                } else {
-                    throw new Error(result.message || 'Failed to join waitlist');
-                }
-            } catch (error) {
-                document.getElementById('errorText').textContent = error.message;
-                errorMessage.style.display = 'block';
-            } finally {
+            // Simulate form submission (no backend needed)
+            setTimeout(() => {
+                successMessage.style.display = 'block';
+                this.reset();
                 submitBtn.disabled = false;
                 loading.style.display = 'none';
-            }
+            }, 1500);
         });
     </script>
 </body>
