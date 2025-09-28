@@ -172,7 +172,7 @@ app.use((err, req, res, next) => {
 
 // Start server
 app.listen(PORT, () => {
-    console.log(`🌱 FarmTech Waitlist Server running on port ${PORT}`);
+    console.log(`🌱 FildeMate Waitlist Server running on port ${PORT}`);
     console.log(`📊 Visit http://localhost:${PORT} to view the waitlist`);
 });
 

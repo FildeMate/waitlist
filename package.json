@@ -1,7 +1,7 @@
 {
-  "name": "farmtech-waitlist",
+  "name": "fildemate-waitlist",
   "version": "1.0.0",
-  "description": "Dynamic waitlist for FarmTech - AI-powered agriculture platform",
+  "description": "Dynamic waitlist for FildeMate - Multimodal AI co-pilot for farmers",
   "main": "server.js",
   "scripts": {
     "start": "node start.js",
@@ -21,6 +21,6 @@
     "nodemon": "^3.0.1"
   },
   "keywords": ["farming", "composting", "ai", "agriculture", "waitlist"],
-  "author": "FarmTech Team",
+  "author": "FildeMate Team",
   "license": "MIT"
 }
