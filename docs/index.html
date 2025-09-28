@@ -154,72 +154,6 @@
             display: none;
         }
 
-        .waitlist-stats {
-            background: #f7fafc;
-            padding: 20px;
-            border-radius: 12px;
-            margin-top: 20px;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #48bb78;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: #718096;
-        }
-
-        .loading {
-            display: none;
-            margin-top: 10px;
-        }
-
-        .spinner {
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid #48bb78;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 30px 20px;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .features {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="logo">🌱</div>
         <h1>FildeMate</h1>
         <p class="subtitle">FildeMate is a multimodal AI system designed to be a user-friendly and intelligent co-pilot for farmers.</p>
         
@@ -243,7 +177,7 @@
         </div>
 
         <form id="waitlistForm">
-            <div class="form-group">
+        <p style="color: #4a5568; font-size: 1.1rem; margin-bottom: 30px; text-align: center; font-weight: 500;">Transform your farming with FildeMate - Join us in revolutionizing agriculture!</p>            <div class="form-group">
                 <label for="email">Email Address</label>
                 <input type="email" id="email" name="email" placeholder="Enter your email address" required>
             </div>
@@ -311,11 +245,6 @@
             <span id="errorText">Something went wrong. Please try again.</span>
         </div>
 
-        <div class="waitlist-stats" id="waitlistStats">
-            <h3 style="margin-bottom: 15px; color: #2d3748;">Waitlist Statistics</h3>
-            <div class="stats-grid">
-                <div class="stat">
-                    <div class="stat-number" id="totalSignups">-</div>
                     <div class="stat-label">Total Signups</div>
                 </div>
                 <div class="stat">
@@ -359,7 +288,6 @@
                 if (response.ok) {
                     successMessage.style.display = 'block';
                     this.reset();
-                    loadStats(); // Refresh stats
                 } else {
                     throw new Error(result.message || 'Failed to join waitlist');
                 }
@@ -385,8 +313,3 @@
             }
         }
         
-        // Load stats on page load
-        loadStats();
-    </script>
-</body>
-</html>
