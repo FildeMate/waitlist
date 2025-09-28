@@ -154,6 +154,44 @@
             display: none;
         }
 
+        .loading {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #48bb78;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🌱</div>
         <h1>FildeMate</h1>
         <p class="subtitle">FildeMate is a multimodal AI system designed to be a user-friendly and intelligent co-pilot for farmers.</p>
         
@@ -176,8 +214,10 @@
             </div>
         </div>
 
+        <p style="color: #4a5568; font-size: 1.1rem; margin-bottom: 30px; text-align: center; font-weight: 500;">Transform your farming with FildeMate - Join us in revolutionizing agriculture!</p>
+
         <form id="waitlistForm">
-        <p style="color: #4a5568; font-size: 1.1rem; margin-bottom: 30px; text-align: center; font-weight: 500;">Transform your farming with FildeMate - Join us in revolutionizing agriculture!</p>            <div class="form-group">
+            <div class="form-group">
                 <label for="email">Email Address</label>
                 <input type="email" id="email" name="email" placeholder="Enter your email address" required>
             </div>
@@ -244,15 +284,6 @@
             <i class="fas fa-exclamation-circle"></i>
             <span id="errorText">Something went wrong. Please try again.</span>
         </div>
-
-                    <div class="stat-label">Total Signups</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number" id="thisWeek">-</div>
-                    <div class="stat-label">This Week</div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <script>
@@ -299,17 +330,6 @@
                 loading.style.display = 'none';
             }
         });
-        
-        // Load waitlist statistics
-        async function loadStats() {
-            try {
-                const response = await fetch('/api/waitlist/stats');
-                const stats = await response.json();
-                
-                document.getElementById('totalSignups').textContent = stats.totalSignups || 0;
-                document.getElementById('thisWeek').textContent = stats.thisWeek || 0;
-            } catch (error) {
-                console.error('Failed to load stats:', error);
-            }
-        }
-        
+    </script>
+</body>
+</html>
